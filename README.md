@@ -1,87 +1,93 @@
 <div align="center">
 
-# painted-animation
+# opus-video-skills
 
-<a href="README.md"><img src="https://img.shields.io/badge/English-2B2233?style=for-the-badge" alt="English"></a>
-<a href="README.zh-CN.md"><img src="https://img.shields.io/badge/简体中文-D97757?style=for-the-badge" alt="简体中文"></a>
+<a href="README.md"><img src="https://img.shields.io/badge/English-0E0F0E?style=for-the-badge" alt="English"></a>
+<a href="README.zh-CN.md"><img src="https://img.shields.io/badge/简体中文-DDF53D?style=for-the-badge" alt="简体中文"></a>
 
-A Claude Code skill for producing hand-painted animation and lyric videos with Claude Opus 5.5.
+A collection of Claude Code skills for producing videos with Claude Opus 5.5, one skill per visual style.
 
 </div>
 
-![小镇姑娘](docs/xiaozhen-sheet.jpg)
-
 ## Overview
 
-The skill enables Claude Opus 5.5 to produce complete animated videos, including storyboarding, character animation, camera work, transitions, music synchronisation and karaoke subtitles. All imagery is drawn procedurally in code; no image generation model is involved.
+Each skill in this repository teaches Claude Opus 5.5 to produce a complete video in a particular visual style, covering storyboarding, animation, review, music and final encoding. All imagery and all music are generated procedurally in code; no image, video or audio generation model is involved. Every frame is a pure function of time, rendered in headless Chrome and encoded with ffmpeg.
 
-The method is derived from two projects by John Heibel: [PDoomVideo](https://github.com/JohnHeibel/PDoomVideo), a 156-second music video produced largely autonomously by Opus 5.5, and [ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase), a general-purpose animation kit based on it. This skill packages both into a single workflow and extends it with a lyric-video pipeline that covers tempo detection, audio clipping and karaoke subtitles.
+## Styles
 
-## How It Works
+| Skill | Style | Typical use |
+|---|---|---|
+| [painted-animation](skills/painted-animation/) | Hand-painted watercolour and ink cartoon, with character acting | Animated shorts, music videos, lyric videos with karaoke |
+| [kinetic-reel](skills/kinetic-reel/) | Kinetic typography: condensed display type, HUD micro-type, WebGL layers | Portfolio and work reels, showreels, product and intro films |
 
-1. **Storyboard.** Claude writes a shot list covering setting, palette, character arc and transitions. For each shot it lists the "reads", the timed sequence of what the viewer must understand.
-2. **Drawing.** Each shot is a JavaScript function that paints the complete frame with p5.js and the [p5.brush](https://github.com/acamposuribe/p5.brush) watercolour library. Every frame is a pure function of time.
-3. **Review.** Contact sheets, frame strips and close-up crops are rendered in headless Chrome. Claude inspects the images and revises the code until each shot meets the guidelines.
-4. **Output.** Frames are rendered in parallel and encoded to MP4 with ffmpeg, with audio muxed in if provided.
+### painted-animation
 
-## Characteristics
+![painted-animation](skills/painted-animation/docs/xiaozhen-sheet.jpg)
 
-- **Character consistency.** Each character is defined by a single drawing function, so its design is identical across all shots.
-- **Frame-accurate timing.** Because frames are computed from time, events can be aligned precisely to beats or to individual sung syllables.
-- **Localised revision.** A change to one element requires editing only the relevant code and re-rendering the affected range; the rest of the video is unaffected.
-- **Built-in animation principles.** The engine provides anticipation, squash and stretch, follow-through and acted expression changes as reusable functions.
-- **Automated self-review.** Rendered frames are checked against an explicit list covering legibility, timing, contacts, transitions and colour.
+Draws every shot with p5.js and the p5.brush watercolour library. Characters act through a library of expressions and motion principles. Music videos are cut to the measured beat, and lyric videos carry word-by-word karaoke subtitles. Example: a 31-second lyric video for 陶喆《小镇姑娘》. [Documentation](skills/painted-animation/README.md).
 
-## Example: 小镇姑娘 (David Tao)
+### kinetic-reel
 
-<p align="center"><img src="docs/koi-gag.gif" width="520" alt="大经理 → 大锦鲤"></p>
+![kinetic-reel](skills/kinetic-reel/docs/work-reel-sheet.jpg)
 
-A 31-second lyric video for one verse of the song. Inputs: the lyrics, a request to take the song's wider context into account, a request to include the fan wordplay in which "大经理" (big manager) is heard as "大锦鲤" (big lucky koi), the audio file, and LRC timestamps.
-
-- **Setting.** One small-town railway station throughout, with the ending mirroring the opening: her departure by train one year earlier, and his own departure at the end.
-- **Visual motif.** A flower identifies the female character in each of her forms: at the train window, on the television, as a koi, and as a star.
-- **Timing.** The song measures 154 BPM with 8 beats per line, and all action is cut to that grid.
-- **Wordplay.** On the syllables "经理", the television image transforms into a koi while the subtitle is struck through and replaced with "锦鲤". The koi then leaves the screen and becomes the "shining star" of the following line.
-
-The storyboard and scene code are available in [examples/xiaozhen](examples/xiaozhen/). The audio is not included for copyright reasons.
+Combines a 2D type canvas with three.js layers (particle terrain, liquid marble, a chrome knot, a particle cloud that condenses into a shape) and a WebGL post pass. Shots are joined by shape-continuity transitions, and the score is synthesized from the same timeline as the picture. Example: "Work Reel ’26", an 84-second portfolio reel. [Documentation](skills/kinetic-reel/README.md).
 
 ## Requirements
 
 - Claude Code with Claude Opus 5.5
 - Node.js, Google Chrome, ffmpeg
-- Python 3 with numpy (for tempo detection only)
+- Python 3 with numpy (painted-animation tempo detection only)
 
 ## Installation
 
-```bash
-git clone https://github.com/tuzhechen2005/painted-animation ~/.claude/skills/painted-animation
+**As plugins (recommended).** In Claude Code:
+
 ```
+/plugin marketplace add tuzhechen2005/opus-video-skills
+/plugin install painted-animation@opus-video-skills
+/plugin install kinetic-reel@opus-video-skills
+```
+
+Install either skill or both. `/plugin update` fetches new versions.
+
+**As personal skills.** Clone the repository once and link the skills you want:
+
+```bash
+git clone https://github.com/tuzhechen2005/opus-video-skills ~/opus-video-skills
+ln -s ~/opus-video-skills/skills/painted-animation ~/.claude/skills/painted-animation
+ln -s ~/opus-video-skills/skills/kinetic-reel ~/.claude/skills/kinetic-reel
+```
+
+Updating is then a `git pull` in `~/opus-video-skills`.
+
+> **Upgrading from `painted-animation`.** This repository was previously the single `painted-animation` skill, cloned directly into `~/.claude/skills/painted-animation`. That layout no longer works, because the skill now lives in `skills/painted-animation/`. Remove the old clone and install with either method above.
 
 ## Usage
 
-Describe the desired video in Claude Code, for example:
+Describe the video in Claude Code. The matching skill is selected automatically, or it can be invoked by name:
 
 > Make a 15-second video of Clawd trying to catch a butterfly.
 
-> Make a lyric video for this song. (with the audio file and an LRC file attached)
+> Make a 60-second kinetic-type reel of my three projects from this résumé.
 
-The skill can also be invoked directly with `/painted-animation`. It creates a project, presents a storyboard, builds and reviews each shot, and writes the result to `out/video.mp4`. Render times depend on the GPU; watercolour fills are considerably slower on integrated graphics.
+Each skill scaffolds a project, presents a storyboard, builds and reviews every shot, and writes the finished MP4 to the project's `out/` directory.
 
 ## Repository Structure
 
 | Path | Description |
 |---|---|
-| `SKILL.md` | Workflow and rules followed by Claude |
-| `template/` | Animation engine: character, brushes, camera, transitions, karaoke, renderer |
-| `scripts/new_project.sh` | Project scaffolding and toolchain check |
-| `scripts/beat_grid.py` | Tempo and beat-phase detection with LRC line alignment |
-| `references/music-video.md` | Guidelines for music videos and longer productions |
-| `examples/xiaozhen/` | Storyboard and scene code for the example above |
+| `.claude-plugin/marketplace.json` | Plugin marketplace manifest (one plugin per skill) |
+| `skills/painted-animation/` | Watercolour animation skill: engine, guides, examples |
+| `skills/kinetic-reel/` | Kinetic-typography reel skill: engine, guides, examples |
+
+## Adding a Style
+
+A new style is a new directory under `skills/` containing a `SKILL.md`, a runnable `template/` and at least one worked example, plus an entry in `.claude-plugin/marketplace.json`. The two existing skills share a contract: frames are pure functions of time, `render.mjs` produces contact sheets and parallel frame renders, and every shot is reviewed from rendered images before the final encode.
 
 ## Acknowledgements
 
-The animation engine and guide are adapted from [ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase) by John Heibel (MIT License; see [template/LICENSE](template/LICENSE)). The overall method follows his [PDoomVideo](https://github.com/JohnHeibel/PDoomVideo). The project uses p5.js, p5.brush, Puppeteer and ffmpeg. The skill and the example were produced with Claude Opus 5.5 in Claude Code.
+The painted-animation engine and guide are adapted from [ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase) by John Heibel (MIT License), and the method follows his [PDoomVideo](https://github.com/JohnHeibel/PDoomVideo). The kinetic-reel renderer is derived from the same kit. The projects use p5.js, p5.brush, three.js, Puppeteer and ffmpeg. The skills and examples were produced with Claude Opus 5.5 in Claude Code.
 
 ## License
 
-MIT
+MIT. See [LICENSE](LICENSE).

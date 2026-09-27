@@ -1,7 +1,8 @@
 MIT License
 
 Copyright (c) 2026 tuzhechen2005
-Portions (template/) Copyright (c) 2026 John Heibel, see template/LICENSE
+Portions (skills/painted-animation/template/, and skills/kinetic-reel/template/render.mjs, which is derived from it)
+Copyright (c) 2026 John Heibel, see skills/painted-animation/template/LICENSE
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
