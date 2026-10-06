@@ -57,7 +57,7 @@ The storyboard and scene code are available in [examples/xiaozhen](examples/xiao
 See the [collection README](../../README.md#installation). As a plugin:
 
 ```
-/plugin marketplace add tuzhechen2005/opus-video-skills
+/plugin marketplace add goforai-vip/opus-video-skills
 /plugin install painted-animation@opus-video-skills
 ```
 

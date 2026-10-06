@@ -55,7 +55,7 @@
 参见[合集说明](../../README.zh-CN.md#安装)。以插件方式安装：
 
 ```
-/plugin marketplace add tuzhechen2005/opus-video-skills
+/plugin marketplace add goforai-vip/opus-video-skills
 /plugin install kinetic-reel@opus-video-skills
 ```
 

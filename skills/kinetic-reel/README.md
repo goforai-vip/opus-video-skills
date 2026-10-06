@@ -50,7 +50,7 @@ The source is in [examples/work-reel-26](examples/work-reel-26/), and the entry 
 See the [collection README](../../README.md#installation). As a plugin:
 
 ```
-/plugin marketplace add tuzhechen2005/opus-video-skills
+/plugin marketplace add goforai-vip/opus-video-skills
 /plugin install kinetic-reel@opus-video-skills
 ```
 

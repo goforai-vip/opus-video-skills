@@ -79,6 +79,8 @@ These are the guide's rules condensed; the guide is authoritative.
 
 ## Adapting
 
+For a request led by cinematic GPU particles (galaxies, glowing flow fields, text/logo assembly or energy bursts), use the sibling [particle-cinema skill](../particle-cinema/SKILL.md) in this fork. Its WebGL style has its own engine and permits particle text; the watercolour rules above apply to this hand-painted style.
+
 - Clawd is the default star, not a requirement. New characters, props and emotions are drawn with the same tools (`paint`, `ribbon`, `through`, `glow`) and kept on-model across shots; new emotions go in `EMO` in `src/clawd.js`.
 - `src/karaoke.js` (template) adds word-by-word karaoke for lyric videos via the `window.overlayHook` hook in `core.js`.
 - `LOOPS.name = t => {...}; LOOPS.name.len = 4;` + `node render.mjs --loop=name --png` makes a seamless loop for GIFs (`ffmpeg -i out/loop_name/f%04d.png …`).

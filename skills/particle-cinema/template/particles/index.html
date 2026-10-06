@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Particle Cinema · Studio</title>
+  <style>
+    * { box-sizing: border-box; } body { margin: 0; background: #080a13; color: #dce8ff; font: 13px system-ui,sans-serif; }
+    main { max-width: 1400px; padding: 24px; margin: auto; }
+    header { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; }
+    h1 { font-size:18px; font-weight:500; letter-spacing:2px; margin:0; } header span { color:#85a0ba; }
+    canvas { width:100%; height:auto; display:block; background:#03050b; border-radius:8px; }
+    .bar { display:flex; gap:16px; align-items:center; padding-top:18px; } input { flex:1; accent-color:#51e8ff; }
+    button { background:#162336; color:#e3efff; border:1px solid #344758; padding:8px 20px; border-radius:20px; cursor:pointer; }
+    #status { min-width:170px; color:#9cb3cb; font-variant-numeric:tabular-nums; }
+    #error { color:#ff9bb5; white-space:pre-wrap; }
+    @media(max-width:600px) { main { padding:12px; } header span { display:none; } .bar { gap:8px; } #status { min-width:90px; } }
+  </style>
+  <script type="importmap">{"imports":{"three":"../node_modules/three/build/three.module.js","three/addons/":"../node_modules/three/examples/jsm/"}}</script>
+</head>
+<body><main>
+  <header><h1>PARTICLE CINEMA</h1><span>Light in motion</span></header>
+  <canvas id="out" width="1920" height="1080" aria-label="Particle animation preview"></canvas>
+  <div class="bar"><button id="play">Play</button><input id="scrub" aria-label="Timeline" type="range" min="0" max="21" step="0.01" value="0"><span id="status">Loading…</span></div>
+  <p id="error" role="alert"></p>
+</main>
+<script src="config.js"></script>
+<script type="module">
+  import { start } from './engine.js';
+  start().catch(e => { document.getElementById('error').textContent = e.message; console.error(e); window.startError = e.message; });
+</script>
+</body></html>

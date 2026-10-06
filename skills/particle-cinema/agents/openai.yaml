@@ -1,0 +1,4 @@
+interface:
+  display_name: "Particle Cinema"
+  short_description: "Cinematic GPU particles, logo morphs and MP4 exports"
+  default_prompt: "Use $particle-cinema to create a cinematic particle animation with a galaxy, logo reveal and energy burst."
