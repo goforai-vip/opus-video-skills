@@ -1,8 +1,8 @@
 # Worked example: Work Reel ’26 (v3.1, 84 s)
 
-The full source of the reel this skill was distilled from: a portfolio reel for an AI engineer, in three chapters
-(Microsoft Cloud & AI → UW–Madison Department of Surgery → Enterprise RAG) and a trace finale. The files are as
-they ran in the original project:
+A complete portfolio-reel example, in three chapters
+(Microsoft Cloud & AI → UW–Madison Department of Surgery → Enterprise RAG) and a trace finale. The files show
+the complete scene and timing structure:
 
 - `reel.js`: all scenes (intro, index, 10 Microsoft shots, 5 Surgery shots, 5 RAG shots, trace, end), the
   transition map `TR` and `SCENES`. It imports three.js from `../../site/vendor/three/three.module.js`. When you
@@ -15,4 +15,4 @@ Read it for how to pace a long reel and budget chapter emphasis. It also shows t
 `cloud.project()` wiring 2D retrieval lines to 3D points, RRF computed for real in `FUSED`, and the choice of
 transition inside each chapter.
 
-All figures on screen come from the author's résumé. Use your own sourced figures. Never reuse these.
+Names and contact details are placeholders. The project descriptions and figures are example content, not claims about the user; replace them with independently sourced material before publishing.

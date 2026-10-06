@@ -5,7 +5,7 @@
     "name": "goforai-vip"
   },
   "metadata": {
-    "description": "Video-making skills with hand-painted animation, kinetic typography and cinematic GPU particles. GoForAI fork with local previews and MP4 export."
+    "description": "Video-making skills with hand-painted animation, kinetic typography and cinematic GPU particles. Local previews and MP4 export."
   },
   "plugins": [
     {

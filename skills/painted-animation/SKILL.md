@@ -1,11 +1,11 @@
 ---
 name: painted-animation
-description: Make hand-painted watercolour-and-ink cartoon videos (MP4) with code — p5.js + p5.brush rendered frame by frame in headless Chrome, encoded with ffmpeg — starring Clawd or any character. Use when the user asks to make an animation, animated short, cartoon, music video, lyric video, animated GIF/loop or "a video of Clawd…", or mentions the PDoomVideo / ClaudeAnimationBase approach. Covers storyboarding, the engine API, the render-and-look review loop, music/lyric sync and splitting long videos across subagents.
+description: Make hand-painted watercolour-and-ink cartoon videos (MP4) with code — p5.js + p5.brush rendered frame by frame in headless Chrome, encoded with ffmpeg — starring Clawd or any character. Use when the user asks to make an animation, animated short, cartoon, music video, lyric video, animated GIF/loop or "a video of Clawd…". Covers storyboarding, the engine API, the render-and-look review loop, music/lyric sync and splitting long videos across subagents.
 ---
 
 # Painted animation
 
-A method for making short cartoons entirely in code, distilled from [JohnHeibel/PDoomVideo](https://github.com/JohnHeibel/PDoomVideo) (a 156 s music video painted by Claude Opus) and its generalised kit [ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase) (MIT), which is bundled here as `template/`.
+Make short cartoons entirely in code using the animation engine, character tools and guide bundled as `template/`. The workflow covers storyboarding, character acting, frame review and music/lyric sync.
 
 **How it works:** every frame is a pure function of time `t`. `studio.html` loads p5.js + p5.brush and your scene files; each shot paints the whole 1920×1080 frame with watercolour fills and boiling ink lines. `render.mjs` drives headless Chrome to render contact sheets for review, or every frame in parallel, and ffmpeg encodes the MP4 (with audio if given).
 
@@ -79,7 +79,7 @@ These are the guide's rules condensed; the guide is authoritative.
 
 ## Adapting
 
-For a request led by cinematic GPU particles (galaxies, glowing flow fields, text/logo assembly or energy bursts), use the sibling [particle-cinema skill](../particle-cinema/SKILL.md) in this fork. Its WebGL style has its own engine and permits particle text; the watercolour rules above apply to this hand-painted style.
+For a request led by cinematic GPU particles (galaxies, glowing flow fields, text/logo assembly or energy bursts), use the sibling [particle-cinema skill](../particle-cinema/SKILL.md). Its WebGL style has its own engine and permits particle text; the watercolour rules above apply to this hand-painted style.
 
 - Clawd is the default star, not a requirement. New characters, props and emotions are drawn with the same tools (`paint`, `ribbon`, `through`, `glow`) and kept on-model across shots; new emotions go in `EMO` in `src/clawd.js`.
 - `src/karaoke.js` (template) adds word-by-word karaoke for lyric videos via the `window.overlayHook` hook in `core.js`.

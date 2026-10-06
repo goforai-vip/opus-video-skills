@@ -16,7 +16,7 @@ Part of [opus-video-skills](../../README.md).
 
 The skill enables Claude Opus 5.5 to produce complete animated videos, including storyboarding, character animation, camera work, transitions, music synchronisation and karaoke subtitles. All imagery is drawn procedurally in code; no image generation model is involved.
 
-The method is derived from two projects by John Heibel: [PDoomVideo](https://github.com/JohnHeibel/PDoomVideo), a 156-second music video produced largely autonomously by Opus 5.5, and [ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase), a general-purpose animation kit based on it. This skill packages both into a single workflow and extends it with a lyric-video pipeline that covers tempo detection, audio clipping and karaoke subtitles.
+The skill provides a unified workflow for hand-painted animation and lyric videos, including storyboarding, character acting, frame review, tempo detection, audio clipping and karaoke subtitles.
 
 ## How It Works
 
@@ -82,9 +82,6 @@ The skill can also be invoked directly with `/painted-animation`. It creates a p
 | `references/music-video.md` | Guidelines for music videos and longer productions |
 | `examples/xiaozhen/` | Storyboard and scene code for the example above |
 
-## Acknowledgements
-
-The animation engine and guide are adapted from [ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase) by John Heibel (MIT License; see [template/LICENSE](template/LICENSE)). The overall method follows his [PDoomVideo](https://github.com/JohnHeibel/PDoomVideo). The project uses p5.js, p5.brush, Puppeteer and ffmpeg. The skill and the example were produced with Claude Opus 5.5 in Claude Code.
 
 ## License
 

@@ -303,7 +303,7 @@ function sBoot(t) {
   }
   txt('INITIALIZING', W / 2, H / 2 + 170, { font: font(F.mono, 18, 500), fill: 'rgba(241,238,230,.6)', ls: 8, align: 'center', a: seg(t, .6, 1) * (1 - seg(t, 2.8, 3.1)) });
   txt(String(count(t, .6, 3, 0, 100)).padStart(3, '0') + '%', W / 2, H / 2 + 210, { font: font(F.mono, 18, 700), fill: K.lime, ls: 4, align: 'center', a: seg(t, .6, 1) * (1 - seg(t, 2.8, 3.1)) });
-  hud(t, { tl: 'ZHECHEN TU — WORK REEL ’26', tr: tc(t), bl: sec(0, 'BOOT'), br: '1920×1080 · 30 FPS · RENDERED IN CODE', zh: '作品集 · 2026', k: ease(seg(t, .15, .7)) });
+  hud(t, { tl: 'YOUR NAME — WORK REEL ’26', tr: tc(t), bl: sec(0, 'BOOT'), br: '1920×1080 · 30 FPS · RENDERED IN CODE', zh: '作品集 · 2026', k: ease(seg(t, .15, .7)) });
   FX.flash = Math.max(0, 1 - Math.abs(t - 3.95) / .08) * .9 + (t > 3.9 ? seg(t, 3.9, 4) * .6 : 0);
 }
 function sEvery(t) {
@@ -319,7 +319,7 @@ function sEvery(t) {
   ctx.save(); ctx.translate(W / 2, H / 2 + 88); ctx.scale(lerp(1.25, 1, slam), lerp(1.25, 1, slam));
   txt(word, 0, 0, { font: f, fill: K.cream, align: 'center', glow: 'rgba(241,238,230,.35)', glowR: 30 });
   ctx.restore();
-  hud(t, { tl: 'ZHECHEN TU — WORK REEL ’26', tr: tc(t), bl: sec(0, 'THESIS'), br: '1920×1080 · 30 FPS · RENDERED IN CODE' });
+  hud(t, { tl: 'YOUR NAME — WORK REEL ’26', tr: tc(t), bl: sec(0, 'THESIS'), br: '1920×1080 · 30 FPS · RENDERED IN CODE' });
   if (Math.abs(t - Hh.answer) < .1) { FX.split = .004 * (1 - Math.abs(t - Hh.answer) / .1); FX.slice = .3 * (1 - Math.abs(t - Hh.answer) / .1); FX.seed = 11; }
 }
 function sNeeds(t) {
@@ -329,7 +329,7 @@ function sNeeds(t) {
   ctx.save(); ctx.translate(W / 2, H / 2 + 36); const sc = lerp(1.35, 1, expoOut(seg(lt, 0, .4))); ctx.scale(sc, sc);
   txt('needs', 0, 0, { font: `italic 132px ${F.serif}`, fill: K.ink, align: 'center', a: seg(lt, 0, .12) });
   ctx.restore();
-  hud(t, { dark: false, tl: 'ZHECHEN TU — WORK REEL ’26', tr: tc(t), bl: sec(0, 'THESIS'), br: 'EVERY ANSWER NEEDS —' });
+  hud(t, { dark: false, tl: 'YOUR NAME — WORK REEL ’26', tr: tc(t), bl: sec(0, 'THESIS'), br: 'EVERY ANSWER NEEDS —' });
 }
 function sEvid(t) {
   bg(K.blue); const lt = t - S.evid, f = font(F.wide, 250);
@@ -338,7 +338,7 @@ function sEvid(t) {
   txt('EVIDENCE', x, H / 2 + 90, { font: f, fill: K.cream, align: 'center' });
   ctx.fillStyle = K.red; ctx.fillRect(1480, 250, 18, 64 * backOut(seg(lt, .2, .4)));
   txt('每个回答，都需要依据', W / 2, H / 2 + 200, { font: font(F.zh, 34, 500), fill: 'rgba(241,238,230,.85)', align: 'center', ls: 10, a: seg(lt, .3, .5) });
-  hud(t, { tl: 'ZHECHEN TU — WORK REEL ’26', tr: tc(t), bl: sec(0, 'THESIS'), br: 'EVERY ANSWER NEEDS EVIDENCE.' });
+  hud(t, { tl: 'YOUR NAME — WORK REEL ’26', tr: tc(t), bl: sec(0, 'THESIS'), br: 'EVERY ANSWER NEEDS EVIDENCE.' });
   if (lt < .12) { FX.split = .006 * (1 - lt / .12); }
   if (t > Hh.glitchOut1) { const g = seg(t, Hh.glitchOut1, S.name); FX.slice = g; FX.split = .01 * g; FX.seed = Math.floor(t * FPS); }
 }
@@ -347,12 +347,12 @@ function sName(t) {
   // a big dashed ring rotating
   ctx.save(); ctx.translate(W / 2, H / 2); ctx.rotate(t * .12); ctx.setLineDash([2, 14]); circle(0, 0, 470, { stroke: 'rgba(241,238,230,.25)', lw: 2 }); ctx.restore();
   const f = font(F.wide, 172), fill = seg(t, Hh.nameFill - .05, Hh.nameFill + .1);
-  const w = letters('ZHECHEN TU', W / 2, H / 2 + 60, { font: f, align: 'center', fill: null, stroke: K.cream, lw: 2.5 }, (i, n) => ({ a: seg(lt, i * .03, i * .03 + .1) }));
-  if (fill > 0) txt('ZHECHEN TU', W / 2, H / 2 + 60, { font: f, fill: K.cream, align: 'center', a: fill, glow: 'rgba(241,238,230,.25)' });
+  const w = letters('YOUR NAME', W / 2, H / 2 + 60, { font: f, align: 'center', fill: null, stroke: K.cream, lw: 2.5 }, (i, n) => ({ a: seg(lt, i * .03, i * .03 + .1) }));
+  if (fill > 0) txt('YOUR NAME', W / 2, H / 2 + 60, { font: f, fill: K.cream, align: 'center', a: fill, glow: 'rgba(241,238,230,.25)' });
   circle(W / 2 + w / 2 + 28, H / 2 + 44, 16 * backOut(seg(t, Hh.nameFill, Hh.nameFill + .3)), { fill: K.lime });
   txt('AI APPLICATION · AGENT ENGINEER', W / 2, H / 2 - 128, { font: font(F.mono, 22, 700), fill: 'rgba(241,238,230,.8)', ls: 7, align: 'center', a: seg(lt, .35, .55) });
   txt('every answer, with its source.', W / 2, H / 2 + 150, { font: `italic 50px ${F.serif}`, fill: K.cream, align: 'center', a: seg(lt, .7, .95) });
-  txt('涂喆宸', W / 2, H / 2 + 222, { font: font(F.zh, 26, 500), fill: 'rgba(241,238,230,.55)', ls: 14, align: 'center', a: seg(lt, .9, 1.1) });
+  txt('示例作品', W / 2, H / 2 + 222, { font: font(F.zh, 26, 500), fill: 'rgba(241,238,230,.55)', ls: 14, align: 'center', a: seg(lt, .9, 1.1) });
   hud(t, { tl: 'UW–MADISON CS ’27', tr: tc(t), bl: 'MICROSOFT CLOUD & AI ’26', br: 'UW SURGERY · CLINICAL AI' });
   if (lt < .3) { FX.split = .012 * (1 - lt / .3); FX.slice = .5 * (1 - lt / .3); FX.seed = Math.floor(t * FPS) + 3; }
 }
@@ -378,8 +378,8 @@ function tape(t, y, rot, col, fg, words, speed, dir, k) {
 }
 function sEnd(t) {
   bg('#121412'); const lt = t - S.end;
-  letters('ZHECHEN', 130, 560, { font: font(F.cond, 280), fill: K.cream }, i => { const k = seg(lt, i * .04, .4 + i * .04); return { dy: (1 - expoOut(k)) * 220, a: k > 0 ? 1 : 0 }; });
-  letters('TU.', 130, 820, { font: font(F.cond, 280), fill: K.cream }, i => { const k = seg(lt, .25 + i * .05, .65 + i * .05); return { dy: (1 - expoOut(k)) * 220, a: k > 0 ? 1 : 0, fill: i === 2 ? K.lime : K.cream }; });
+  letters('YOUR', 130, 560, { font: font(F.cond, 280), fill: K.cream }, i => { const k = seg(lt, i * .04, .4 + i * .04); return { dy: (1 - expoOut(k)) * 220, a: k > 0 ? 1 : 0 }; });
+  letters('NAME.', 130, 820, { font: font(F.cond, 280), fill: K.cream }, i => { const k = seg(lt, .25 + i * .05, .65 + i * .05); return { dy: (1 - expoOut(k)) * 220, a: k > 0 ? 1 : 0, fill: i === 4 ? K.lime : K.cream }; });
   const mk = seg(t, Hh.endMark, Hh.endMark + .8), p = beatPulse(t, 6);
   starburst(1470, 440, 150 * backOut(mk), 14, 'rgba(221,245,61,.14)', t * .3, .8);
   jelly(1470, 430, 118 * backOut(mk), K.lime, t, mk, .05 * Math.sin(t * 1.5));
@@ -389,7 +389,7 @@ function sEnd(t) {
   circle(1470 + Math.cos(-Math.PI / 2 + TAU * pr) * 52, 800 + Math.sin(-Math.PI / 2 + TAU * pr) * 52, 8, { fill: K.lime, a: seg(lt, .6, .9) });
   txt('AI APPLICATION & AGENT ENGINEER', 140, 900, { font: font(F.mono, 26, 700), fill: K.cream, ls: 6, a: seg(lt, .8, 1.1) });
   line([[140 + measure('AI APPLICATION & AGENT ENGINEER', font(F.mono, 26, 700), 6) + 24, 891], [140 + measure('AI APPLICATION & AGENT ENGINEER', font(F.mono, 26, 700), 6) + 24 + 120 * easeOut(seg(lt, 1, 1.5)), 891]], K.cream, 2);
-  hud(t, { tl: 'SELECTED WORK — 2026', tr: 'ANSWERS WITH SOURCES.', bl: 'ztu29@wisc.edu', br: 'github.com/tuzhechen2005 ↗', brackets: false, k: seg(lt, .5, 1) });
+  hud(t, { tl: 'SELECTED WORK — 2026', tr: 'ANSWERS WITH SOURCES.', bl: 'you@example.com', br: 'github.com/you ↗', brackets: false, k: seg(lt, .5, 1) });
   // outro: glitch, collapse to a dot, black
   if (t > Hh.glitchEnd) { const g = seg(t, Hh.glitchEnd, Hh.endDot); FX.slice = g; FX.split = .02 * g; FX.seed = Math.floor(t * FPS); }
   if (t > Hh.endDot) {
@@ -745,7 +745,7 @@ function sIndex(t) {
     txt(role, 1780, y - 58, { font: font(F.mono, 18, 700), fill: col === K.lime ? K.lime : 'rgba(241,238,230,.8)', ls: 2.5, align: 'right', a: seg(t, t0 + .3, t0 + .5) });
     txt(dur, 1780, y - 2, { font: font(F.cond, 46), fill: K.cream, align: 'right', a: seg(t, t0 + .3, t0 + .5) });
   });
-  hud(t, { tl: 'ZHECHEN TU — WORK REEL ’26', tr: tc(t), bl: sec(0, 'INDEX'), br: 'IN ORDER OF EMPHASIS' });
+  hud(t, { tl: 'YOUR NAME — WORK REEL ’26', tr: tc(t), bl: sec(0, 'INDEX'), br: 'IN ORDER OF EMPHASIS' });
 }
 
 // ---------- 02 UW–MADISON DEPARTMENT OF SURGERY ----------
@@ -1018,7 +1018,7 @@ const SPANS = [
 function sTrace(t) {
   bg(K.ink); const lt = t - S.trace;
   dropWord('TRACE.', 140, 215, font(F.cond, 130), S.trace, t, { fall: 110 });
-  txt('run: zhechen-tu/work-reel-26', 146, 262, { font: font(F.mono, 18, 700), fill: 'rgba(241,238,230,.6)', ls: 2, a: seg(lt, .2, .4) });
+  txt('run: demo/work-reel-26', 146, 262, { font: font(F.mono, 18, 700), fill: 'rgba(241,238,230,.6)', ls: 2, a: seg(lt, .2, .4) });
   const okK = seg(t, Hh.traceOk, Hh.traceOk + .25);
   if (okK > 0) { circle(1560, 190, 10, { fill: K.lime, a: okK }); txt('STATUS OK', 1584, 199, { font: font(F.mono, 22, 700), fill: K.lime, ls: 3, a: okK }); txt('FIGURES FROM THE 2026.09 RÉSUMÉ', 1780, 244, { font: font(F.mono, 15, 700), fill: 'rgba(241,238,230,.6)', ls: 2, align: 'right', a: okK }); }
   const tx0 = 700, tx1 = 1640, X = s => lerp(tx0, tx1, s / C.dur), y0 = 318, rh = 40;
@@ -1034,7 +1034,7 @@ function sTrace(t) {
   // playhead sweeps the waterfall
   const ph = X(C.dur * easeInOut(seg(lt, .3, 3.2)));
   line([[ph, y0 - 8], [ph, y0 + SPANS.length * rh]], K.lime, 2, seg(lt, .3, .5) * (1 - seg(lt, 3.3, 3.6)));
-  hud(t, { tl: 'ZHECHEN TU — WORK REEL ’26', tr: tc(t), bl: sec(0, 'TRACE'), br: 'MICROSOFT 30s · SURGERY 18s · RAG 14s', zh: '整支短片即一次 Agent 运行的 trace', zhRight: true });
+  hud(t, { tl: 'YOUR NAME — WORK REEL ’26', tr: tc(t), bl: sec(0, 'TRACE'), br: 'MICROSOFT 30s · SURGERY 18s · RAG 14s', zh: '整支短片即一次 Agent 运行的 trace', zhRight: true });
 }
 function sEnd2(t) {
   sEnd(t);
@@ -1122,8 +1122,8 @@ function frame(t) {
 const fontsReady = Promise.all([
   document.fonts.load('100px "Anton"'), document.fonts.load('100px "Archivo Black"'), document.fonts.load('italic 100px "Instrument Serif"'),
   document.fonts.load('700 20px "JetBrains Mono"'), document.fonts.load('500 20px "JetBrains Mono"'),
-  document.fonts.load('500 20px "Noto Sans SC"', '一三不与业个中临主习事于云交人代令以件企体作依保修做具再决准凭出分划判到前动助医单即发取句只召可合名员品响喆器回图均基处外多大威存学完实审宸密对导少尚工师平并床序应康延建开式引强录微思急性患意感成或手拒持指按据排接控推提支整文断斯方旗时星是智未本权条来板构架查校样档检次每测涂消混源溯滤点片状独率理生用由甲疏症癌白的监目矩短码研确示科稀程稠究立端答策算类系索红级统维缓编者而联能腺自英融行要规觉解计订设证评诊词试读调负质足路转软轻过运进连迟迪迭追逊部都重量链问阵限障集需靠面项预驱验高麦齐（），'),
-  document.fonts.load('700 20px "Noto Sans SC"', '一三不与业个中临主习事于云交人代令以件企体作依保修做具再决准凭出分划判到前动助医单即发取句只召可合名员品响喆器回图均基处外多大威存学完实审宸密对导少尚工师平并床序应康延建开式引强录微思急性患意感成或手拒持指按据排接控推提支整文断斯方旗时星是智未本权条来板构架查校样档检次每测涂消混源溯滤点片状独率理生用由甲疏症癌白的监目矩短码研确示科稀程稠究立端答策算类系索红级统维缓编者而联能腺自英融行要规觉解计订设证评诊词试读调负质足路转软轻过运进连迟迪迭追逊部都重量链问阵限障集需靠面项预驱验高麦齐（），'),
+  document.fonts.load('500 20px "Noto Sans SC"', '示例作品一三不与业个中临主习事于云交人代令以件企体作依保修做具再决准凭出分划判到前动助医单即发取句只召可合名员品响喆器回图均基处外多大威存学完实审宸密对导少尚工师平并床序应康延建开式引强录微思急性患意感成或手拒持指按据排接控推提支整文断斯方旗时星是智未本权条来板构架查校样档检次每测涂消混源溯滤点片状独率理生用由甲疏症癌白的监目矩短码研确示科稀程稠究立端答策算类系索红级统维缓编者而联能腺自英融行要规觉解计订设证评诊词试读调负质足路转软轻过运进连迟迪迭追逊部都重量链问阵限障集需靠面项预驱验高麦齐（），'),
+  document.fonts.load('700 20px "Noto Sans SC"', '示例作品一三不与业个中临主习事于云交人代令以件企体作依保修做具再决准凭出分划判到前动助医单即发取句只召可合名员品响喆器回图均基处外多大威存学完实审宸密对导少尚工师平并床序应康延建开式引强录微思急性患意感成或手拒持指按据排接控推提支整文断斯方旗时星是智未本权条来板构架查校样档检次每测涂消混源溯滤点片状独率理生用由甲疏症癌白的监目矩短码研确示科稀程稠究立端答策算类系索红级统维缓编者而联能腺自英融行要规觉解计订设证评诊词试读调负质足路转软轻过运进连迟迪迭追逊部都重量链问阵限障集需靠面项预驱验高麦齐（），'),
 ]);
 window.renderAt = async (t, type = 'image/png', q = .92) => { frame(t); return out.toDataURL(type, q); };
 window.renderSheet = async (times, cols = 3, w = 640, crop = null) => {

@@ -37,7 +37,7 @@
 | 4–6 | EVERY / ANSWER | 巨大的 EVERY 加上下描边叠字滚动 → 5.0 翻转成 ANSWER |
 | 6–7 | needs | 米白底，细圆圈画出，衬线斜体 *needs*，一个红点 |
 | 7–8 | EVIDENCE | 电光蓝满屏，EVIDENCE 带动态模糊砸进来；中文小字「每个回答，都需要依据」；切片故障出场 |
-| 8–10 | 名片 | ZHECHEN TU. 从描边到实心，RGB 故障入场；AI APPLICATION · AGENT ENGINEER，涂喆宸，衬线副标 |
+| 8–10 | 名片 | YOUR NAME. 从描边到实心，RGB 故障入场；AI APPLICATION · AGENT ENGINEER，示例作品，衬线副标 |
 | 10–13 | 01 企业 RAG | 米白底，ROUTE. / RETRIEVE. / RERANK. 逐字母落下；青柠圆里的水母标志；每行配一个技术标签 |
 | 13–16 | 01 数据 | 黑底，流体纹理填充的柱状图加红色曲线；计数器滚到 093%（路由准确率），然后 +18% Recall@10；S 曲线面板 → 斜切转场 |
 | 16–19 | 02 多智能体 | 旋转的青柠/白色方框隧道，中心圆内写 FIVE / AGENTS / ONE CASE，五个角色标签卡拍绕圆出现 |
@@ -48,4 +48,4 @@
 | 28–30 | 04 甲状腺 | 流体大理石纹满屏，衬线斜体 *Cite it — or abstain.* 逐词出现 → 竖条切片 |
 | 30–32 | 04 信息 | 米白底 CLINICAL RAG 大字；右列逐条打勾：主导 AI 工程师、6.9 万美元资助、两位 PI、依据生成、安全评测 |
 | 32–36 | 04 胶带 | 两条斜向胶带反向滚动：TRACEABLE ✳ GROUNDED ✳ SAFE / CITE ↗ SOURCE ↗ ABSTAIN；巨大的描边 04；底部小字「研发中，尚未进行患者端验证」 |
-| 36–42 | 片尾 | ZHECHEN / TU 字母升起，青柠水母标志旋转，圆形进度环；邮箱和 GitHub → 40.5 RGB 故障 → 收成一个点 → 黑场。片尾只用英文 |
+| 36–42 | 片尾 | YOUR / NAME 字母升起，青柠水母标志旋转，圆形进度环；邮箱和 GitHub → 40.5 RGB 故障 → 收成一个点 → 黑场。片尾只用英文 |

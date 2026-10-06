@@ -1,12 +1,12 @@
-# Long-form and music videos (lessons from the P(doom) video)
+# Long-form and music videos
 
-The P(doom) music video (156.6 s, 9 chapters, ~7,800 lines) was built by Claude Opus in Claude Code with only two instructions from the human: "use the Clawd character" and "give each lyric interesting visuals and transitions". This file captures how it was organised, so a video longer than ~20 s can be made the same way. Its storyboard is at [PDoomVideo/STORYBOARD.md](https://github.com/JohnHeibel/PDoomVideo/blob/main/STORYBOARD.md); a finished lyric video made with this skill is in [examples/xiaozhen](../examples/xiaozhen/).
+Guidelines for organising music videos and animations longer than about 20 seconds. A complete lyric-video storyboard and scene implementation are available in [examples/xiaozhen](../examples/xiaozhen/).
 
 ## 1. Lock the song grid first
 
 - **Ask for the song file and an LRC** (or the time each line starts). Never guess lyric timing from a slow "feel": pop songs are usually faster than they sound, and one line is often only 2–3 s.
 - Measure the tempo and beat phase: `python3 scripts/beat_grid.py song.mp3 --from=100 --to=200 --lrc=song.lrc` (needs numpy). It prints the BPM, a beat time, and each lyric line's beat index. Lines usually start a fraction of a beat before a bar line (pickups).
-  - P(doom): 88 BPM, beat 0.682 s. 小镇姑娘: 154 BPM (half-time 77), one line = 8 beats ≈ 3.1 s.
+  - 小镇姑娘: 154 BPM (half-time 77), one line = 8 beats ≈ 3.1 s.
   - For a ballad, set `PROJECT.bpm` to the half-time pulse so idles and bounces don't look frantic.
 - **Cut a clip on a bar line**: start one bar (or two) before the first line you use, end a bar or two after the last, and fade out:
   `ffmpeg -ss <start> -t <len> -i song.mp3 -af "afade=t=in:d=.25,afade=t=out:st=<len-2>:d=2" -c:a aac assets/clip.m4a`.
@@ -18,9 +18,9 @@ The P(doom) music video (156.6 s, 9 chapters, ~7,800 lines) was built by Claude 
 
 ## 2. Storyboard shape for a song
 
-- **One idea for the whole video**, stated in a paragraph (P(doom): "a stage show that goes off the rails… the whole apocalypse was a play").
+- **One idea for the whole video**, stated in a paragraph, such as a stage show that goes off the rails and ends by revealing that everything was a play.
 - **Cast table**: each recurring character, their look and their arc (Clawd grows tiny → planet-sized → back to cute).
-- **What ties it together**: a recurring set (all choruses return to the *same stage*, escalating each time), an escalating motif (the P(doom) thermometer climbs 8→34→61→86→99.9), a palette arc, a rule for transitions.
+- **What ties it together**: a recurring set (all choruses return to the *same stage*, escalating each time), an escalating motif (for example, a thermometer climbs 8→34→61→86→99.9), a palette arc, a rule for transitions.
 - **Chapters** = song sections (intro, verse, chorus, bridge…). Each gets one setting and a small palette, e.g. `The Lab · night indigo, lamp ochre, monitor teal`.
 - **Shot table per chapter**: `| Time | Lyric | Shot | Out |`. One shot per lyric line (1.4–4 s). The *Out* column names how it leaves: "camera keeps pushing in", "CHOMP: mouth closes over the camera to black", "the cube drops through the floor".
 - **Act the lyric, don't write it.** Every line is a visual gag that shows the meaning. The karaoke already carries the words, so no signs or captions that repeat them.
@@ -31,12 +31,12 @@ The P(doom) music video (156.6 s, 9 chapters, ~7,800 lines) was built by Claude 
 
 - One file per chapter in `src/scenes/` (`c01_intro.js`, `c02_chorus1.js`, …), each an IIFE whose helpers stay private, ending with `shots([...])` for its shots. Add each `<script>` to `studio.html` in order.
 - Shared, stable things (characters, recurring props like the stage/thermometer, palette, lyrics) live in shared files that chapter authors don't edit. Guest characters a later chapter reuses get exported on a shared object (`CAST.basilisk = (x, y, s, t, o) => {...}`).
-- Chapter breaks get a transition (P(doom) used a brush wipe at each chapter boundary, with a different colour pair per chapter). Inside a chapter, the action carries across the cut.
+- Chapter breaks get a transition, such as a brush wipe at each chapter boundary with a different colour pair per chapter. Inside a chapter, the action carries across the cut.
 - For karaoke, include `src/karaoke.js` after `timeline.js` in `studio.html` and fill `LY`. Keep key action above y ≈ 960 while a line shows. It loads a Chinese brush font (Ma Shan Zheng) for exactly the characters in `LY` through `window.EXTRA_FONTS`.
 
 ## 4. Parallel subagents (optional, for long videos)
 
-P(doom)'s second generation was painted by parallel subagents, one per chapter, all briefed by the same guide. Do this only if the user asks for subagents or the video is long enough to justify it; otherwise build chapters yourself in order.
+For parallel chapter production, each subagent needs the same guide and shared character definitions. Use subagents only when the user or applicable instructions authorise delegation; otherwise build chapters yourself in order.
 
 1. Write the storyboard, the shared files and at least one finished chapter yourself first, so there is a working reference for style and API.
 2. Write a short `CHAPTER_BRIEF.md` in the project (the orchestrator's brief to subagents). It should contain:

@@ -1,13 +1,15 @@
 ---
 name: kinetic-reel
-description: Make kinetic-typography motion reels (MP4) in code: showreels, portfolio or work reels, product promos, intro films, "motion design"-style videos with bold condensed type, HUD micro-type, black/cream/lime palette, three.js generative layers (particle terrain, liquid marble, chrome knot, particle clouds), shape-continuity transitions and a synthesized, beat-locked score. Canvas 2D + WebGL rendered frame by frame in headless Chrome, encoded with ffmpeg. Use when the user asks for a reel, showreel, motion-graphics / kinetic-type video, a "Work Reel" in this style, or to extend/re-cut the Work Reel ’26.
+description: >-
+  Make kinetic-typography motion reels (MP4) in code: showreels, portfolio or work reels, product promos, intro films, "motion design"-style videos with bold condensed type, HUD micro-type, black/cream/lime palette, three.js generative layers (particle terrain, liquid marble, chrome knot, particle clouds), shape-continuity transitions and a synthesized, beat-locked score. Canvas 2D + WebGL rendered frame by frame in headless Chrome, encoded with ffmpeg. Use when the user asks for a reel, showreel, motion-graphics / kinetic-type video, a "Work Reel" in this style, or to extend/re-cut the Work Reel ’26.
 ---
 
 # Kinetic reel
 
-A method for making editorial, high-energy motion reels entirely in code, distilled from "Work Reel ’26" (an 84 s
-portfolio reel: Microsoft → UW–Madison Surgery → Enterprise RAG → trace finale). It's bundled as a runnable
-`template/` (a 17 s demo that uses every technique) and a full worked example in `examples/work-reel-26/`.
+Make editorial, high-energy motion reels entirely in code. The bundled `template/` is a runnable 17-second
+demo of typography, WebGL layers, transitions and a beat-locked score. A complete 84-second portfolio-reel
+example is available in `examples/work-reel-26/`; its identity fields are placeholders and its project details
+must be replaced with sourced material before publishing.
 
 **How it works.** Every frame is a pure function of `t`. `reel/index.html` loads `reel/cues.js` (the timeline) and
 `reel/reel.js` (an ES module: three.js layers, a 2D type canvas and a WebGL post pass). `render.mjs` drives headless

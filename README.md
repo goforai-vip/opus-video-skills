@@ -9,9 +9,9 @@ A collection of video-making skills: hand-painted animation, kinetic typography 
 
 </div>
 
-## GoForAI fork
+## GoForAI Video Skills
 
-Maintained at [goforai-vip/opus-video-skills](https://github.com/goforai-vip/opus-video-skills), forked from [tuzhechen2005/opus-video-skills](https://github.com/tuzhechen2005/opus-video-skills). This fork adds **particle-cinema**: a GPU particle engine with seven effects, logo/text morphs, bloom, analytic trails, a local preview player and a 21-second runnable example. The new skill works with Codex and Claude Code; the original two skills retain their upstream workflows.
+Maintained at [goforai-vip/opus-video-skills](https://github.com/goforai-vip/opus-video-skills). Three styles cover hand-painted cartoons, kinetic typography and cinematic GPU particles. Particle Cinema includes seven effects, logo/text morphs, bloom, analytic trails, a local preview player and a 21-second runnable example, and works with Codex and Claude Code.
 
 ## Overview
 
@@ -33,7 +33,7 @@ Draws every shot with p5.js and the p5.brush watercolour library. Characters act
 
 ### kinetic-reel
 
-![kinetic-reel](skills/kinetic-reel/docs/work-reel-sheet.jpg)
+![kinetic-reel](skills/kinetic-reel/docs/demo-sheet.jpg)
 
 Combines a 2D type canvas with three.js layers (particle terrain, liquid marble, a chrome knot, a particle cloud that condenses into a shape) and a WebGL post pass. Shots are joined by shape-continuity transitions, and the score is synthesized from the same timeline as the picture. Example: "Work Reel ’26", an 84-second portfolio reel. [Documentation](skills/kinetic-reel/README.md).
 
@@ -45,7 +45,7 @@ Galaxies, braided currents, helices, particle text/logo reveals, radial shockwav
 
 ## Requirements
 
-- Claude Code with Claude Opus 5.5 for the original skills; Codex or Claude Code for particle-cinema
+- Claude Code with Claude Opus 5.5 for painted-animation and kinetic-reel; Codex or Claude Code for particle-cinema
 - Node.js 20.19+ or 22.12+ for particle-cinema
 - Node.js, Google Chrome, ffmpeg
 - Python 3 with numpy (painted-animation tempo detection only)
@@ -103,9 +103,6 @@ Try the new style: “Make a cinematic particle animation: a galaxy gathers into
 
 A new style is a new directory under `skills/` containing a `SKILL.md`, a runnable `template/` and at least one worked example, plus an entry in `.claude-plugin/marketplace.json`. The skills share a contract: frames are pure functions of time, `render.mjs` produces contact sheets and parallel frame renders, and every shot is reviewed from rendered images before the final encode.
 
-## Acknowledgements
-
-The painted-animation engine and guide are adapted from [ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase) by John Heibel (MIT License), and the method follows his [PDoomVideo](https://github.com/JohnHeibel/PDoomVideo). The kinetic-reel renderer is derived from the same kit. The upstream skills and examples were produced with Claude Opus 5.5 in Claude Code. This fork adds an independent particle engine and renderer. The projects use p5.js, p5.brush, three.js, Puppeteer and ffmpeg.
 
 ## License
 

@@ -34,4 +34,4 @@ Default output: 1920×1080, 30 fps, silent. `draft` / `standard` / `ultra` use 1
 hardware performance varies. Local transparent PNG/SVG logo masks and installed fonts are supported.
 See [SKILL.md](SKILL.md) for adaptation and review instructions.
 
-MIT, under the repository [LICENSE](../../LICENSE). The particle engine is new work in this fork.
+MIT, under the repository [LICENSE](../../LICENSE).

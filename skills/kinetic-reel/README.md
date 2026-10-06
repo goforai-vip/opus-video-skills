@@ -10,7 +10,7 @@ Part of [opus-video-skills](../../README.md).
 
 </div>
 
-![Work Reel ’26](docs/work-reel-sheet.jpg)
+![Kinetic reel template](docs/demo-sheet.jpg)
 
 ## Overview
 
@@ -34,9 +34,8 @@ The skill enables Claude Opus 5.5 to produce editorial, high-energy motion reels
 
 ## Example: Work Reel ’26
 
-<p align="center"><img src="docs/work-reel.gif" width="640" alt="Work Reel ’26"></p>
 
-An 84-second portfolio reel for an AI engineer. The time budget follows the order of emphasis: 30 seconds for an internship at Microsoft Cloud & AI (tool-calling evaluation, constrained decoding, a ReAct agent, a planner–reviewer multi-agent system, an incident-response pipeline, reliability), 18 seconds for clinical AI research at the UW–Madison Department of Surgery, and 14 seconds for an enterprise RAG system. It ends with the whole reel laid out as an agent trace. The reel also ships as the entry page of the author's website, with skip, sound, replay and enter controls in the same visual language.
+An 84-second portfolio reel for an AI engineer. The time budget follows the order of emphasis: 30 seconds for an internship at Microsoft Cloud & AI (tool-calling evaluation, constrained decoding, a ReAct agent, a planner–reviewer multi-agent system, an incident-response pipeline, reliability), 18 seconds for clinical AI research at the UW–Madison Department of Surgery, and 14 seconds for an enterprise RAG system. It ends with the whole reel laid out as an agent trace. The site-intro example shows skip, sound, replay and enter controls in the same visual language.
 
 The source is in [examples/work-reel-26](examples/work-reel-26/), and the entry page in [examples/site-intro](examples/site-intro/).
 
@@ -76,4 +75,4 @@ The skill can also be invoked directly with `/kinetic-reel`. It scaffolds a proj
 
 ## License
 
-MIT. The renderer is derived from [ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase) by John Heibel (MIT). See the repository [LICENSE](../../LICENSE).
+MIT. See the repository [LICENSE](../../LICENSE).

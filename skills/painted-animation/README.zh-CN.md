@@ -16,7 +16,7 @@
 
 本技能使 Claude Opus 5.5 能够独立完成动画视频的制作，涵盖分镜设计、角色动画、镜头运动、转场、音乐同步与卡拉 OK 字幕。所有画面均由代码程序化绘制，不依赖任何图像生成模型。
 
-该方法源自 John Heibel 的两个项目：[PDoomVideo](https://github.com/JohnHeibel/PDoomVideo) 和 [ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase)。前者是一部主要由 Opus 5.5 自主完成的 156 秒音乐视频，后者是在其基础上整理的通用动画工具包。本技能将二者整合为统一的工作流程，并在此基础上增加了歌词 MV 流程，包括节拍检测、音频剪辑与卡拉 OK 字幕。
+本技能提供统一的手绘动画与歌词视频工作流，涵盖分镜、角色表演、画面审查、节拍检测、音频剪辑与卡拉 OK 字幕。
 
 ## 技术原理
 
@@ -82,9 +82,6 @@
 | `references/music-video.md` | 音乐视频与长篇制作规范 |
 | `examples/xiaozhen/` | 上述示例的分镜与场景代码 |
 
-## 致谢
-
-动画引擎与动画指南改编自 John Heibel 的 [ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase)（MIT 协议，见 [template/LICENSE](template/LICENSE)），整体方法参照其 [PDoomVideo](https://github.com/JohnHeibel/PDoomVideo)。本项目使用了 p5.js、p5.brush、Puppeteer 与 ffmpeg。技能本身及示例由 Claude Opus 5.5 在 Claude Code 中完成。
 
 ## 许可协议
 

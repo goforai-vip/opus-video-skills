@@ -10,7 +10,7 @@
 
 </div>
 
-![Work Reel ’26](docs/work-reel-sheet.jpg)
+![Kinetic reel template](docs/demo-sheet.jpg)
 
 ## 概述
 
@@ -34,14 +34,13 @@
 
 ## 示例：Work Reel ’26
 
-<p align="center"><img src="docs/work-reel.gif" width="640" alt="Work Reel ’26"></p>
 
 一位 AI 工程师的 84 秒作品集短片，时长按重点依次分配：
 - **30 秒：微软 Cloud & AI 实习。** 包括工具调用评测、约束解码、ReAct 智能体、规划—审查多智能体、事件响应管道与可靠性保障。
 - **18 秒：UW–Madison 外科系的临床 AI 研究。**
 - **14 秒：企业级 RAG 系统。**
 
-片尾把整支短片展开成一次 Agent 运行的 trace。这支短片同时是作者个人网站的入口页，页面上的跳过、声音、重播与进入按钮沿用同一套视觉语言。
+片尾把整支短片展开成一次 Agent 运行的 trace。网站片头示例包含跳过、声音、重播与进入按钮，沿用同一套视觉语言。
 
 源码见 [examples/work-reel-26](examples/work-reel-26/)，入口页见 [examples/site-intro](examples/site-intro/)。
 
@@ -81,4 +80,4 @@
 
 ## 许可协议
 
-MIT。渲染器改编自 John Heibel 的 [ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase)（MIT 协议），详见仓库的 [LICENSE](../../LICENSE)。
+MIT，详见仓库的 [LICENSE](../../LICENSE)。

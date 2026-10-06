@@ -9,9 +9,9 @@
 
 </div>
 
-## GoForAI 扩展版
+## GoForAI 视频技能
 
-本仓库维护于 [goforai-vip/opus-video-skills](https://github.com/goforai-vip/opus-video-skills)，Fork 自 [tuzhechen2005/opus-video-skills](https://github.com/tuzhechen2005/opus-video-skills)。新增 **particle-cinema**：七类 GPU 粒子效果、文字/Logo 聚合变形、辉光、解析拖尾、本地预览播放器和 21 秒可运行示例。新 skill 可用于 Codex 和 Claude Code，原有两个 skill 保留上游工作流。
+本仓库维护于 [goforai-vip/opus-video-skills](https://github.com/goforai-vip/opus-video-skills)。三种风格覆盖手绘动画、动态排版与电影感 GPU 粒子。Particle Cinema 提供七类效果、文字/Logo 聚合变形、辉光、解析拖尾、本地预览播放器和 21 秒可运行示例，可用于 Codex 和 Claude Code。
 
 ## 概述
 
@@ -33,7 +33,7 @@
 
 ### kinetic-reel
 
-![kinetic-reel](skills/kinetic-reel/docs/work-reel-sheet.jpg)
+![kinetic-reel](skills/kinetic-reel/docs/demo-sheet.jpg)
 
 在二维排版画布之上叠加 three.js 图层（粒子地形、流体大理石纹、铬金属扭结、可聚合成特定形状的粒子云），并经过 WebGL 后期处理。镜头之间采用形状连贯的转场，配乐与画面由同一条时间轴合成。示例为 84 秒的作品集短片《Work Reel ’26》。[说明文档](skills/kinetic-reel/README.zh-CN.md)。
 
@@ -45,7 +45,7 @@
 
 ## 环境要求
 
-- 原有技能使用 Claude Code 及 Claude Opus 5.5；particle-cinema 可使用 Codex 或 Claude Code
+- painted-animation 和 kinetic-reel 使用 Claude Code 及 Claude Opus 5.5；particle-cinema 可使用 Codex 或 Claude Code
 - particle-cinema 需要 Node.js 20.19+ 或 22.12+
 - Node.js、Google Chrome、ffmpeg
 - Python 3 及 numpy（仅 painted-animation 的节拍检测需要）
@@ -103,9 +103,6 @@ Codex 用户：将 `skills/particle-cinema` 复制到个人 `~/.codex/skills` �
 
 新增一种风格，即在 `skills/` 下新建一个目录，包含 `SKILL.md`、可直接运行的 `template/` 以及至少一个完整示例，并在 `.claude-plugin/marketplace.json` 中添加对应条目。各技能遵循同一套约定：每一帧都是时间的纯函数；`render.mjs` 负责生成关键帧拼图和并行渲染全部帧；最终编码之前，每个镜头都要依据渲染出的画面审查。
 
-## 致谢
-
-painted-animation 的动画引擎与指南改编自 John Heibel 的 [ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase)（MIT 协议），整体方法参照其 [PDoomVideo](https://github.com/JohnHeibel/PDoomVideo)；kinetic-reel 的渲染器同样由该工具包改编而来。上游技能及示例由 Claude Opus 5.5 在 Claude Code 中完成，本 fork 新增独立的粒子引擎与渲染器。本项目使用了 p5.js、p5.brush、three.js、Puppeteer 与 ffmpeg。
 
 ## 许可协议
 
