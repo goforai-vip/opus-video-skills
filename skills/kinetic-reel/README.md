@@ -14,6 +14,11 @@ Part of [opus-video-skills](../../README.md).
 
 ## Overview
 
+For narrated product films, the [voiced showreel workflow](references/voiced-showreel.md) combines strong type,
+animated demonstrations, selective particle reveals and speech. A self-contained Python helper synthesizes
+sentences, measures their durations, creates captions and optionally ducks a local music track. References
+guide the visual character; storyboards are designed around the new subject.
+
 The skill enables Claude Opus 5.5 to produce editorial, high-energy motion reels of the kind used for portfolios, showreels and product introductions. It covers the time budget, storyboarding, typographic animation, generative backgrounds, transitions, a synthesized score and the final encode. All imagery and all music are generated in code.
 
 ## How It Works

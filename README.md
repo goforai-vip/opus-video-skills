@@ -13,6 +13,10 @@ A collection of video-making skills: hand-painted animation, kinetic typography 
 
 Maintained at [goforai-vip/opus-video-skills](https://github.com/goforai-vip/opus-video-skills). Three styles cover hand-painted cartoons, kinetic typography and cinematic GPU particles. Particle Cinema includes seven effects, logo/text morphs, bloom, analytic trails, a local preview player and a 21-second runnable example, and works with Codex and Claude Code.
 
+Narrated product films combine bold type, visual demonstrations and particle reveals around a fresh storyboard.
+Both kinetic and particle templates include sentence TTS, measured timings, captions and optional music ducking.
+Reference films guide visual taste; composition and shot order are redesigned around the new subject.
+
 ## Overview
 
 Each skill guides a coding agent through storyboarding, animation, frame review and final encoding. Visuals are generated procedurally in code; music workflows vary by style, and particle-cinema is silent unless a local audio track is supplied. Every frame is a pure function of time, rendered in headless Chrome and encoded with ffmpeg.

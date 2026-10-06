@@ -28,7 +28,7 @@
     },
     {
       "name": "kinetic-reel",
-      "description": "Kinetic-typography motion reels: bold condensed type, HUD micro-type, three.js generative layers, shape-continuity transitions and a synthesized beat-locked score.",
+      "description": "Kinetic typography and narrated product films: bold type, HUD labels, three.js layers, shape-continuity transitions, measured sentence timings and music ducking.",
       "source": "./",
       "strict": false,
       "skills": [
@@ -46,7 +46,7 @@
     },
     {
       "name": "particle-cinema",
-      "description": "Cinematic GPU particles: galaxy, analytic flow, helix, text/logo assembly, shockwave, hyperspace and energy orb. Deterministic GLSL morphs, bloom, trails, local preview and MP4 export.",
+      "description": "Cinematic GPU particles: galaxies, text/logo assembly, shockwaves, morphs, bloom and trails. Local preview and MP4 export, with optional narration, captions and music ducking.",
       "source": "./",
       "strict": false,
       "skills": [

@@ -1,6 +1,6 @@
 ---
 name: particle-cinema
-description: Create cinematic GPU particle animations and MP4s in code using Three.js and GLSL. Use for spectacular particle effects, galaxy or nebula reveals, flow fields, energy explosions, hyperspace tunnels, and particles assembling into text or a supplied logo. Supports deterministic morphs, bloom, analytic trails, camera choreography and offline frame rendering. Suitable for Chinese requests such as 炫酷粒子动画、粒子聚合、粒子文字、星云、能量爆散. Use painted-animation for watercolour cartoons and kinetic-reel for typography-led editorial reels.
+description: Create cinematic GPU particle animations and MP4s in code using Three.js and GLSL. Use for spectacular particle effects, galaxy or nebula reveals, flow fields, energy explosions, hyperspace tunnels, and particles assembling into text or a supplied logo. Supports deterministic morphs, bloom, trails, camera choreography, offline frames and optional narration with measured timings and music ducking. Suitable for 炫酷粒子动画、粒子聚合、粒子文字、星云、能量爆散. Use painted-animation for watercolour cartoons and kinetic-reel for typography-led narrated showreels.
 ---
 
 # Particle cinema
@@ -26,6 +26,10 @@ it has no CDN or API-key dependency. Use `CHROME_PATH` / `--chrome=<path>` if Ch
 
 Read [references/effects.md](references/effects.md) when selecting effects or building custom ones.
 For a concrete timeline, read [examples/nova/STORYBOARD.md](examples/nova/STORYBOARD.md).
+For films with voiceover, read [references/narration.md](references/narration.md). The bundled
+`audio/narrate.py` creates measured sentence timings, captions and an optional ducked music mix. For a
+product showreel brief, plan narration unless the user requests a music-only or silent film. Use references
+as visual direction and design fresh shots; the seven-effect demo does not dictate the final sequence.
 
 ## Design and implement
 

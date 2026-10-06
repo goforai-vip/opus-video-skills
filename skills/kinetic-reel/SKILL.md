@@ -2,6 +2,7 @@
 name: kinetic-reel
 description: >-
   Make kinetic-typography motion reels (MP4) in code: showreels, portfolio or work reels, product promos, intro films, "motion design"-style videos with bold condensed type, HUD micro-type, black/cream/lime palette, three.js generative layers (particle terrain, liquid marble, chrome knot, particle clouds), shape-continuity transitions and a synthesized, beat-locked score. Canvas 2D + WebGL rendered frame by frame in headless Chrome, encoded with ffmpeg. Use when the user asks for a reel, showreel, motion-graphics / kinetic-type video, a "Work Reel" in this style, or to extend/re-cut the Work Reel ’26.
+  Supports narrated product films with sentence timing, captions and music ducking, including Chinese requests for 炫酷产品介绍视频、配音展示片.
 ---
 
 # Kinetic reel
@@ -15,6 +16,13 @@ must be replaced with sourced material before publishing.
 `reel/reel.js` (an ES module: three.js layers, a 2D type canvas and a WebGL post pass). `render.mjs` drives headless
 Chrome to render contact sheets, strips and stills for review, or every frame in parallel, and ffmpeg encodes the MP4.
 `music/score.mjs` synthesizes the score in Node from the same `cues.js`, so every hit lands on its frame.
+
+For spectacular product/capability videos with voiceover, read
+[references/voiced-showreel.md](references/voiced-showreel.md). Use a supplied reference to understand the
+visual character and redesign the story for the subject. This mode combines bold type, explanatory mechanisms,
+selective particle reveals and narration; synthesize speech before finalizing the timeline. Its bundled helper
+is `music/narrate.py`. Template runtime, palette and silent/score-only examples do not override the user's brief.
+Include narration for this product-showreel mode unless the user requests a silent or music-only film.
 
 ## Workflow
 

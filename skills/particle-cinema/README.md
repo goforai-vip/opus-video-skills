@@ -6,6 +6,10 @@ Cinematic particles rendered in Three.js / GLSL: galaxies, braided flow, helices
 radial shockwaves, warp tunnels and energy spheres. Includes a local preview with playback/seeking,
 21-second worked example, bloom, analytic trails, deterministic morphs and MP4 export.
 
+Narrated product films can synthesize sentences, measure their real duration, write captions and duck local
+music under the voice. The Chinese baseline is Yunxi, rate +12%, pitch -2Hz, with configurable voice settings.
+See the [narration workflow](references/narration.md); Python and network access are needed for TTS.
+
 ![Seven-shot example](docs/nova-sheet.jpg)
 
 Install with Claude Code:
